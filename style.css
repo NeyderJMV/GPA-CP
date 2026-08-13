@@ -1,0 +1,912 @@
+/* =====================================================
+   CONFIGURACIÓN GENERAL
+===================================================== */
+
+/* Quitamos márgenes y espacios que el navegador
+   coloca automáticamente */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Desplazamiento suave al utilizar el menú */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Estilos generales de la página */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fcf7f5;
+    color: #564932;
+    line-height: 1.6;
+}
+
+
+/* Los enlaces no tendrán el subrayado tradicional */
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* Las imágenes nunca serán más grandes que su contenedor */
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =====================================================
+   BARRA DE NAVEGACIÓN
+===================================================== */
+
+header {
+    background-color: #9d8b70;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 12px rgba(86, 73, 50, 0.10);
+}
+
+
+.navbar {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 15px 0;
+}
+
+
+/* Logo */
+
+.logo img {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+
+/* Menú */
+
+.nav-links {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+
+.nav-links a {
+    font-size: 15px;
+    font-weight: 600;
+    color: #fcf7f5;
+
+    transition: color 0.3s ease;
+}
+
+
+.nav-links a:hover {
+    color: #564932;
+}
+
+
+/* =====================================================
+   SECCIÓN PRINCIPAL / HERO
+===================================================== */
+
+.hero {
+    min-height: 90vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(246, 67, 18, 0.12),
+            transparent 40%
+        ),
+        #fcf7f5;
+}
+
+
+.hero-content {
+    width: 90%;
+    max-width: 850px;
+}
+
+
+.hero-subtitle {
+    color: #c86a48;
+
+    text-transform: uppercase;
+    letter-spacing: 3px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+
+.hero h1 {
+    font-size: clamp(50px, 8vw, 95px);
+
+    color: #564932;
+
+    line-height: 1;
+
+    margin-bottom: 25px;
+}
+
+
+.hero-slogan {
+    font-size: clamp(22px, 3vw, 32px);
+
+    font-weight: 600;
+
+    color: #f64312;
+
+    margin-bottom: 20px;
+}
+
+
+.hero-text {
+    max-width: 700px;
+    margin: 0 auto 20px;
+
+    font-size: 18px;
+}
+
+
+.hero-message {
+    font-size: 17px;
+
+    font-weight: bold;
+
+    color: #564932;
+
+    margin-bottom: 35px;
+}
+
+
+/* Botones */
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =====================================================
+   BOTONES GENERALES
+===================================================== */
+
+.btn {
+    display: inline-block;
+
+    padding: 13px 26px;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+
+.btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 18px rgba(86, 73, 50, 0.18);
+}
+
+
+/* Botón naranja */
+
+.btn-primary {
+    background-color: #f64312;
+    color: #ffffff;
+}
+
+
+.btn-primary:hover {
+    background-color: #c83f18;
+}
+
+
+/* Botón terracota */
+
+.btn-secondary {
+    background-color: #c86a48;
+    color: #ffffff;
+}
+
+
+.btn-secondary:hover {
+    background-color: #9d8b70;
+}
+
+
+/* =====================================================
+   SECCIONES GENERALES
+===================================================== */
+
+.section {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 100px 0;
+}
+
+
+.section-header {
+    text-align: center;
+
+    max-width: 750px;
+
+    margin: 0 auto 60px;
+}
+
+
+.section-subtitle {
+    color: #f64312;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+
+.section-header h2 {
+    color: #564932;
+
+    font-size: clamp(32px, 5vw, 48px);
+
+    line-height: 1.2;
+
+    margin-bottom: 18px;
+}
+
+
+.section-header p {
+    font-size: 17px;
+}
+
+
+/* =====================================================
+   SOBRE EL GPA
+===================================================== */
+
+.about-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 60px;
+
+    align-items: start;
+}
+
+
+.about-info h3,
+.location h3 {
+    font-size: 25px;
+
+    color: #564932;
+
+    margin-bottom: 12px;
+
+    margin-top: 25px;
+}
+
+
+.about-info h3:first-child,
+.location h3:first-child {
+    margin-top: 0;
+}
+
+
+.about-info p,
+.location p {
+    margin-bottom: 18px;
+
+    font-size: 16px;
+}
+
+
+.about-info strong {
+    color: #c86a48;
+}
+
+
+/* Mapa */
+
+.map-container {
+    width: 100%;
+
+    height: 350px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(86, 73, 50, 0.15);
+
+    margin: 20px 0;
+}
+
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+}
+
+
+.map-link {
+    display: inline-block;
+
+    color: #f64312;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+
+.map-link:hover {
+    color: #c86a48;
+}
+
+
+/* =====================================================
+   ANIMALES
+===================================================== */
+
+.animals-section {
+    max-width: 1300px;
+}
+
+
+.animals-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+
+.animal-card {
+    background-color: #ffffff;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    padding-bottom: 25px;
+
+    box-shadow:
+        0 8px 25px rgba(86, 73, 50, 0.12);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.animal-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 35px rgba(86, 73, 50, 0.18);
+}
+
+
+/* Imagen de los animales */
+
+.animal-card img {
+    width: 100%;
+
+    height: 420px;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+
+.animal-card:hover img {
+    transform: scale(1.03);
+}
+
+
+/* Botón de la tarjeta */
+
+.animal-card .btn {
+    display: block;
+
+    width: 80%;
+
+    margin: 25px auto 0;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   ADOPCIÓN
+===================================================== */
+
+.adoption-container,
+.foster-container,
+.donations-container {
+    display: grid;
+
+    grid-template-columns:
+        1.4fr 0.8fr;
+
+    gap: 60px;
+
+    align-items: center;
+}
+
+
+.adoption-info h3,
+.foster-info h3,
+.donations-info h3 {
+    color: #564932;
+
+    font-size: 25px;
+
+    margin-bottom: 12px;
+
+    margin-top: 25px;
+}
+
+
+.adoption-info h3:first-child,
+.foster-info h3:first-child,
+.donations-info h3:first-child {
+    margin-top: 0;
+}
+
+
+.adoption-info p,
+.foster-info p,
+.donations-info p {
+    margin-bottom: 20px;
+
+    font-size: 16px;
+}
+
+
+/* Lista numerada */
+
+.adoption-info ol {
+    padding-left: 25px;
+
+    margin: 20px 0;
+}
+
+
+.adoption-info li {
+    margin-bottom: 15px;
+
+    padding-left: 5px;
+}
+
+
+/* Listas */
+
+.foster-info ul {
+    padding-left: 25px;
+
+    margin: 20px 0;
+}
+
+
+.foster-info li {
+    margin-bottom: 12px;
+}
+
+
+/* Texto destacado */
+
+.highlight-text {
+    color: #c86a48;
+
+    font-size: 18px !important;
+
+    margin-top: 25px;
+}
+
+
+/* =====================================================
+   TARJETAS DE FORMULARIOS
+===================================================== */
+
+.form-card {
+    background-color: #ffffff;
+
+    padding: 40px 35px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 10px 30px rgba(86, 73, 50, 0.12);
+
+    text-align: center;
+
+    border-top: 5px solid #f64312;
+}
+
+
+.form-card h3 {
+    color: #564932;
+
+    font-size: 26px;
+
+    margin-bottom: 15px;
+}
+
+
+.form-card p {
+    margin-bottom: 25px;
+}
+
+
+/* =====================================================
+   DONACIONES
+===================================================== */
+
+.donations-section {
+    background-color: #f4ebe5;
+
+    width: 100%;
+
+    max-width: none;
+
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+
+.donations-section .section-header {
+    max-width: 750px;
+}
+
+
+.donations-container {
+    max-width: 1200px;
+
+    margin: auto;
+}
+
+
+.donations-info {
+    max-width: 700px;
+}
+
+
+/* =====================================================
+   CONTACTO
+===================================================== */
+
+.contact-section {
+    text-align: center;
+}
+
+
+.contact-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 30px;
+
+    max-width: 850px;
+
+    margin: auto;
+}
+
+
+.contact-card {
+    background-color: #ffffff;
+
+    padding: 35px;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 8px 25px rgba(86, 73, 50, 0.10);
+}
+
+
+.contact-card h3 {
+    font-size: 24px;
+
+    color: #564932;
+
+    margin-bottom: 10px;
+}
+
+
+.contact-card p {
+    margin-bottom: 20px;
+
+    color: #9d8b70;
+
+    font-weight: 600;
+}
+
+
+.contact-message {
+    max-width: 700px;
+
+    margin: 50px auto 0;
+
+    color: #c86a48;
+
+    font-size: 18px;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+    background-color: #564932;
+
+    color: #fcf7f5;
+
+    text-align: center;
+
+    padding: 60px 20px;
+}
+
+
+.footer-content {
+    max-width: 700px;
+
+    margin: auto;
+}
+
+
+.footer-logo {
+    width: 90px;
+    height: 90px;
+
+    object-fit: contain;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+}
+
+
+.footer h3 {
+    font-size: 23px;
+
+    margin-bottom: 12px;
+}
+
+
+.footer p {
+    margin-bottom: 10px;
+}
+
+
+.footer-links {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    margin: 25px 0;
+}
+
+
+.footer-links a {
+    color: #fcf7f5;
+
+    font-weight: bold;
+
+    transition: color 0.3s ease;
+}
+
+
+.footer-links a:hover {
+    color: #f64312;
+}
+
+
+.copyright {
+    font-size: 13px;
+
+    opacity: 0.7;
+
+    margin-top: 25px;
+}
+
+
+/* =====================================================
+   RESPONSIVE - TABLETS
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        gap: 15px;
+    }
+
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+
+    .about-container,
+    .adoption-container,
+    .foster-container,
+    .donations-container {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+
+    .animals-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE - CELULARES
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    .logo img {
+        width: 65px;
+        height: 65px;
+    }
+
+
+    .nav-links {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 10px 15px;
+    }
+
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+
+    .hero {
+        min-height: 80vh;
+
+        padding: 60px 15px;
+    }
+
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+
+    .hero-text {
+        font-size: 16px;
+    }
+
+
+    .section {
+        width: 92%;
+
+        padding: 70px 0;
+    }
+
+
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+
+    .animals-grid {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+
+    .animal-card img {
+        height: auto;
+
+        max-height: 550px;
+
+        object-fit: contain;
+
+        background-color: #f4ebe5;
+    }
+
+
+    .map-container {
+        height: 300px;
+    }
+
+
+    .form-card {
+        padding: 30px 20px;
+    }
+
+
+    .footer-links {
+        flex-wrap: wrap;
+    }
+
+}
